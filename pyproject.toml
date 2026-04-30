@@ -1,0 +1,22 @@
+[project]
+name = "cemc-cheat"
+description = "A command-line cheat sheet tool for CEMC operations."
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.3.3",
+]
+
+[project.scripts]
+cemccheat = "cemc_cheat.cli:cli"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cemc_cheat"]
